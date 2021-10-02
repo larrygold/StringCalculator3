@@ -18,7 +18,7 @@ namespace StringCalculator3
             if (input.Length == 0)
                 return 0;
 
-            if (input.Contains("-"))
+            if (input.Contains("-") && !input.StartsWith("//"))
                 throw new ArgumentOutOfRangeException();
 
             var parsedData = ParseInput(input);
