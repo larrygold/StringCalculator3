@@ -49,6 +49,7 @@ namespace StringCalculator3.Tests
         }
 
         [TestCase(9, "//;\n6;3")]
+        [TestCase(11, "//:\n9:2")]
         public void Should_ReturnSum_When_CustomDelimiter(int expected, string input)
         {
             Assert.AreEqual(expected, Calculator.Sum(input));

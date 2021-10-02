@@ -12,7 +12,7 @@ namespace StringCalculator3
 
             if (input.StartsWith("//"))
             {
-                var customDelimiter = ";";
+                var customDelimiter = input.Substring(2, input.IndexOf("\n") - 2);
                 var temp = input.Substring(4, input.Length - 4);
                 return temp.Split(new string[] { ",", "\n", customDelimiter }, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
             }
