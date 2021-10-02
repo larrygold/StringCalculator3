@@ -27,10 +27,14 @@ namespace StringCalculator3
 
         private static int Sum(IEnumerable<int> input)
         {
-            if (input.Any(x => x < 0))
-                throw new ArgumentOutOfRangeException();
-
+            EnsureNoNegativeNumber(input);
             return input.Sum();
+        }
+
+        private static void EnsureNoNegativeNumber(IEnumerable<int> input)
+        {
+            if (input.Any(x => x < 0))
+                throw new ArgumentOutOfRangeException(null, "Invalid numbers are -9");
         }
 
         private static IEnumerable<int> GetNumbers(Calculator parsedData)
