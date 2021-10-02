@@ -42,5 +42,11 @@ namespace StringCalculator3.Tests
             Assert.AreEqual(expected, Calculator.Sum(input));
         }
 
+        [Test]
+        public void Should_ReturnSum_When_CommaOrNewLineDelimiter()
+        {
+            Assert.AreEqual(6, Calculator.Sum("1,2\n3"));
+        }
+
     }
 }

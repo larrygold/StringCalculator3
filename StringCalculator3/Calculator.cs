@@ -11,7 +11,6 @@ namespace StringCalculator3
                 return 0;
 
             return input.Split(new string[] {",", "\n"}, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
-
         }
     }
 }
