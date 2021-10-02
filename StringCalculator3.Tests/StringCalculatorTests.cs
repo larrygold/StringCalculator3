@@ -57,10 +57,10 @@ namespace StringCalculator3.Tests
             Assert.AreEqual(expected, Calculator.Sum(input));
         }
 
-        [Test]
-        public void Should_ThrowException_When_NegativeNumber()
+        [TestCase("-3")]
+        public void Should_ThrowException_When_NegativeNumber(string input)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum("-3"));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum(input));
         }
 
     }
