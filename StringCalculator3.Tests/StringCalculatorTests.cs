@@ -10,9 +10,9 @@ namespace StringCalculator3.Tests
         }
 
         [Test]
-        public void Test1()
+        public void Should_Return0_WhenEmptyString()
         {
-            Assert.Pass();
+            Assert.AreEqual(0,Calculator.Sum(""));
         }
     }
 }
