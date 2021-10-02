@@ -21,7 +21,7 @@ namespace StringCalculator3
                 var customDelimiter =  input.Substring(customDelimiterStartIndex, customDelimiterEndIndex - customDelimiterStartIndex + 1);
                 delimiters = new string[] { ",", "\n", customDelimiter };
 
-                input = input.Substring(startSecondLine, (input.Length - 1) - startSecondLine + 1);
+                input = input.Substring(startSecondLine);
             }
 
             return input.Split(delimiters, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
