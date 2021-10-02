@@ -14,5 +14,11 @@ namespace StringCalculator3.Tests
         {
             Assert.AreEqual(0,Calculator.Sum(""));
         }
+
+        [Test]
+        public void Should_ReturnSameNumber_WhenOneNumber()
+        {
+            Assert.AreEqual(15, Calculator.Sum("15"));
+        }
     }
 }
