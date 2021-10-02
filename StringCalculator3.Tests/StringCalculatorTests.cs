@@ -35,10 +35,11 @@ namespace StringCalculator3.Tests
             Assert.AreEqual(6, Calculator.Sum("1,2,3"));
         }
 
-        [Test]
-        public void Should_ReturnSum_When_TwoNumbersSeparatedByNewLine()
+        [TestCase(3, "1\n2")]
+        public void Should_ReturnSum_When_TwoNumbersSeparatedByNewLine(int expected, string input)
         {
-            Assert.AreEqual(3, Calculator.Sum("1\n2"));
+            Assert.AreEqual(expected, Calculator.Sum(input));
         }
+
     }
 }
