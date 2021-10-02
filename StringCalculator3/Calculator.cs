@@ -10,14 +10,16 @@ namespace StringCalculator3
             if (input.Length == 0)
                 return 0;
 
+            var delimiters = new string[] {",", "\n"};
+
             if (input.StartsWith("//"))
             {
-                var customDelimiter = input.Substring(2, input.IndexOf("\n") - 2);
-                var temp = input.Substring(4, input.Length - 4);
-                return temp.Split(new string[] { ",", "\n", customDelimiter }, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
+                var customDelimiter =  input.Substring(2, input.IndexOf("\n") - 2);
+                delimiters = new string[] { ",", "\n", customDelimiter };
+                input = input.Substring(4, input.Length - 4);
             }
 
-            return input.Split(new string[] {",", "\n"}, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
+            return input.Split(delimiters, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
         }
     }
 }
