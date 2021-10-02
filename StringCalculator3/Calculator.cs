@@ -34,7 +34,10 @@ namespace StringCalculator3
         private static void EnsureNoNegativeNumber(IEnumerable<int> input)
         {
             if (input.Any(x => x < 0))
-                throw new ArgumentOutOfRangeException(null, "Invalid numbers are -9");
+            {
+                var negativeNumbers = input.Where(x => x < 0);
+                throw new ArgumentOutOfRangeException(null, $"Invalid numbers are {String.Join(", ", negativeNumbers)}");
+            }
         }
 
         private static IEnumerable<int> GetNumbers(Calculator parsedData)

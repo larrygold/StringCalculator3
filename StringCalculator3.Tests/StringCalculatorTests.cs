@@ -66,6 +66,7 @@ namespace StringCalculator3.Tests
         }
 
         [TestCase("Invalid numbers are -9", "2,-9")]
+        [TestCase("Invalid numbers are -4, -9", "2, -4, -9")]
         public void Should_DisplayNegativeNumbersInException_When_NegativeNumbers(string expectedMessage, string input)
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum(input));
