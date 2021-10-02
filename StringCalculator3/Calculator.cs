@@ -4,11 +4,10 @@ namespace StringCalculator3
 {
     public class Calculator
     {
-        public static int Sum(string empty)
+        public static int Sum(string input)
         {
-            if (empty.Length > 0)
-                return 15;
-            return 0;
+            int.TryParse(input, out var output);
+            return output;
         }
     }
 }
