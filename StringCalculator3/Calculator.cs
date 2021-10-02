@@ -18,15 +18,19 @@ namespace StringCalculator3
             if (input.Length == 0)
                 return 0;
 
-            if (input.Contains("-") && !input.StartsWith("//"))
-                throw new ArgumentOutOfRangeException();
+            /*if (input.Contains("-") && !input.StartsWith("//"))
+                throw new ArgumentOutOfRangeException();*/
 
             var parsedData = ParseInput(input);
 
-            return parsedData._secondLine
-                             .Split(parsedData._delimiters, StringSplitOptions.None)
-                             .Select(num => int.Parse(num))
-                             .Sum();
+            var numbersAsInts = parsedData._secondLine
+                                                     .Split(parsedData._delimiters, StringSplitOptions.None)
+                                                     .Select(num => int.Parse(num));
+
+            if (numbersAsInts.Any(x => x < 0))
+                throw new ArgumentOutOfRangeException();
+
+            return numbersAsInts.Sum();
         }
 
         private static Calculator ParseInput(string input)
