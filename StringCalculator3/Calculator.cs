@@ -10,7 +10,7 @@ namespace StringCalculator3
             if (input.Length == 0)
                 return 0;
 
-            return input.Split(new char[] {',', '\n' }).Select(num => int.Parse(num)).Sum();
+            return input.Split(new string[] {",", "\n"}, StringSplitOptions.None).Select(num => int.Parse(num)).Sum();
 
         }
     }
