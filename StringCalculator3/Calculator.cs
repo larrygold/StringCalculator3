@@ -11,7 +11,7 @@ namespace StringCalculator3
                 return 0;
 
             if (input.Contains("\n"))
-                return 3;
+                return input.Split("\n").Select(num => int.Parse(num)).Sum();
 
             return input.Split(',').Select(num => int.Parse(num)).Sum();
 

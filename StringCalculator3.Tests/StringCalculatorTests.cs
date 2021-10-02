@@ -36,6 +36,7 @@ namespace StringCalculator3.Tests
         }
 
         [TestCase(3, "1\n2")]
+        [TestCase(6, "2\n4")]
         public void Should_ReturnSum_When_TwoNumbersSeparatedByNewLine(int expected, string input)
         {
             Assert.AreEqual(expected, Calculator.Sum(input));
