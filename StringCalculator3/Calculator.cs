@@ -14,7 +14,10 @@ namespace StringCalculator3
 
             if (input.StartsWith("//"))
             {
-                var customDelimiter =  input.Substring(2, input.IndexOf("\n") - 2);
+                var customDelimiterStartIndex = 2;
+                var customDelimiterEndIndex = input.IndexOf("\n") - 1;
+
+                var customDelimiter =  input.Substring(customDelimiterStartIndex, customDelimiterEndIndex - customDelimiterStartIndex + 1);
                 delimiters = new string[] { ",", "\n", customDelimiter };
                 input = input.Substring(4, input.Length - 4);
             }
