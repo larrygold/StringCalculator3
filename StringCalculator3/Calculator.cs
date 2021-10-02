@@ -32,15 +32,12 @@ namespace StringCalculator3
 
             if (input.StartsWith("//"))
             {
-                var customDelimiterStartIndex = 2;
-                var customDelimiterEndIndex = input.IndexOf("\n") - 1;
-                var startSecondLine = customDelimiterEndIndex + 2;
-
-                var customDelimiter = input.Substring(customDelimiterStartIndex,
-                    customDelimiterEndIndex - customDelimiterStartIndex + 1);
+                var twoPartsOfInput = input.Split("\n");
+                var customDelimiter = twoPartsOfInput[0].Substring(2);
+                var secondLine = twoPartsOfInput[1];
 
                 delimiters = new string[] {",", "\n", customDelimiter};
-                input = input.Substring(startSecondLine);
+                input = secondLine;
             }
 
             return new Calculator(delimiters, input);
