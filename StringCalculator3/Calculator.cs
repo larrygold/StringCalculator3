@@ -10,9 +10,7 @@ namespace StringCalculator3
             if (input.Length == 0)
                 return 0;
 
-            var numbersAsStrings = input.Split(',');
-            var numbersAsInts = numbersAsStrings.Select(num => int.Parse(num));
-            return numbersAsInts.Sum();
+            return input.Split(',').Select(num => int.Parse(num)).Sum();
 
         }
     }
