@@ -23,6 +23,7 @@ namespace StringCalculator3.Tests
         }
 
         [TestCase(20, "8,12")]
+        [TestCase(30, "14,16")]
         public void Should_ReturnSum_When_TwoNumbersSeparatedByComma(int expected, string input)
         {
             Assert.AreEqual(expected, Calculator.Sum(input));
