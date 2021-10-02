@@ -22,10 +22,10 @@ namespace StringCalculator3.Tests
             Assert.AreEqual(expected, Calculator.Sum(input));
         }
 
-        [Test]
-        public void Should_ReturnSum_When_TwoNumbersSeparatedByComma()
+        [TestCase(20, "8,12")]
+        public void Should_ReturnSum_When_TwoNumbersSeparatedByComma(int expected, string input)
         {
-            Assert.AreEqual(20, Calculator.Sum("8,12"));
+            Assert.AreEqual(expected, Calculator.Sum(input));
         }
     }
 }
