@@ -58,6 +58,7 @@ namespace StringCalculator3.Tests
         }
 
         [TestCase("-3")]
+        [TestCase("2,-9")]
         public void Should_ThrowException_When_NegativeNumber(string input)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum(input));
