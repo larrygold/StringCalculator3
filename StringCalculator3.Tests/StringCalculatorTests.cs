@@ -65,11 +65,11 @@ namespace StringCalculator3.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum(input));
         }
 
-        [Test]
-        public void Should_DisplayNegativeNumbersInException_When_NegativeNumbers()
+        [TestCase("Invalid numbers are -9", "2,-9")]
+        public void Should_DisplayNegativeNumbersInException_When_NegativeNumbers(string expectedMessage, string input)
         {
-            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum("2,-9"));
-            Assert.AreEqual("Invalid numbers are -9", ex.Message);
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum(input));
+            Assert.AreEqual(expectedMessage, ex.Message);
         }
 
     }
