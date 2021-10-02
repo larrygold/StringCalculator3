@@ -48,5 +48,11 @@ namespace StringCalculator3.Tests
             Assert.AreEqual(6, Calculator.Sum("1,2\n3"));
         }
 
+        [Test]
+        public void Should_ReturnSum_When_CustomDelimiter()
+        {
+            Assert.AreEqual(9, Calculator.Sum("//;\n6;3"));
+        }
+
     }
 }
