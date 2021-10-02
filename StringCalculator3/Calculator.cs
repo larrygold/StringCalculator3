@@ -10,7 +10,8 @@ namespace StringCalculator3
             if (input.Contains(','))
             {
                 var numbersAsStrings = input.Split(',');
-                return int.Parse(numbersAsStrings[0]) + int.Parse(numbersAsStrings[1]);
+                var numbersAsInts = numbersAsStrings.Select(num => int.Parse(num));
+                return numbersAsInts.Sum();
             }
 
             int.TryParse(input, out var output);
