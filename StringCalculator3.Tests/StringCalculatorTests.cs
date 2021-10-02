@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace StringCalculator3.Tests
@@ -54,6 +55,12 @@ namespace StringCalculator3.Tests
         public void Should_ReturnSum_When_CustomDelimiter(int expected, string input)
         {
             Assert.AreEqual(expected, Calculator.Sum(input));
+        }
+
+        [Test]
+        public void Should_ThrowException_When_NegativeNumber()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Sum("-3"));
         }
 
     }
