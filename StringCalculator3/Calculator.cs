@@ -7,15 +7,13 @@ namespace StringCalculator3
     {
         public static int Sum(string input)
         {
-            if (input.Contains(','))
-            {
-                var numbersAsStrings = input.Split(',');
-                var numbersAsInts = numbersAsStrings.Select(num => int.Parse(num));
-                return numbersAsInts.Sum();
-            }
+            if (input.Length == 0)
+                return 0;
 
-            int.TryParse(input, out var output);
-            return output;
+            var numbersAsStrings = input.Split(',');
+            var numbersAsInts = numbersAsStrings.Select(num => int.Parse(num));
+            return numbersAsInts.Sum();
+
         }
     }
 }
